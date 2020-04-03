@@ -1,71 +1,33 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
-
-
+import React, { Fragment } from 'react'
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+import * as actions from  '../actions'
+import Signup from './Signup'
+import Login from './Login'
 import Dashboard from './Dashboard'
 
 
-class App extends Component {
-    _isMounted = false;
 
-    state = {
-        user: {},
-        login: false,
-        isLoading: true
-        };
+const App = () => {
 
-    componentDidMount() {
-    this._isMounted = true;
-    if (this._isMounted) {
-      this.setState({ isLoading: false });
-    }
-  }    
-
-    newUserSubmitHandler = (event, userInfo) => {
-    event.preventDefault();
-    localStorage.getItem("token");
-    fetch("http://localhost:3000/api/v1/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        name: userInfo.name,
-        username: userInfo.username,
-        password: userInfo.password
-      })
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        localStorage.setItem("token", data.jwt);
-        this.setState({
-          user: data.user,
-          login: true
-        });
-
-        this.props.history.push("/dashboard");
-        
-      });
-  };
-
-  render() { 
   return (
-    <div>
-        <Switch>
+    <Fragment>
+      
+      <Switch>
         <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
-        
+
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route render={() => <Redirect to="/dashboard" />} />
-        </Switch>
-    </div>
-
-  );
-  }
+      </Switch>
+      
+    </Fragment>
+  )
 }
 
-
-
-
-export default withRouter(App);
+export default compose(
+  withRouter,
+  connect(null, actions)
+)(App)
