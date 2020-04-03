@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Route, Switch, withRouter } from 'react-router-dom'
-import Signup from './Signup'
-import Login from './Login'
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
+
+
+import Dashboard from './Dashboard'
 
 
 class App extends Component {
@@ -54,7 +55,7 @@ class App extends Component {
     <div>
         <Switch>
         <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
-        <Route exact path="/signup" component={Signup} />
+        
         <Route exact path="/dashboard" component={Dashboard} />
         <Route render={() => <Redirect to="/dashboard" />} />
         </Switch>
