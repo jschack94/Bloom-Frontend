@@ -4,6 +4,7 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import * as actions from  '../actions'
+import LoggedOutHeader from './LoggedOutHeader'
 
 
 import PropTypes from 'prop-types'
@@ -85,12 +86,12 @@ class Signup extends React.Component {
     const { email_address, password, first_name, last_name } = this.state
 
     if (loggedIn) {
-      return <Redirect to={location.state ? location.state.currentPage : "/dashboard"} />
+      return <Redirect to={location.state ? location.state.currentPage : "/browse"} />
     } else {
       return (
         <div className={classes.root}>
           {error ? this.errorFlash(error) : null}
-          
+          <LoggedOutHeader />
           <Paper className={classes.paper} elevation={1}>
             <Typography variant="headline" component="h3">
               Sign up to start your career journey with the help of the community of your professions.

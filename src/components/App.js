@@ -6,6 +6,7 @@ import * as actions from  '../actions'
 import Signup from './Signup'
 import Login from './Login'
 import Dashboard from './Dashboard'
+import Browse from './Browse'
 
 
 
@@ -15,12 +16,13 @@ const App = () => {
     <Fragment>
       
       <Switch>
-        <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
+        <Route exact path="/" render={() => <Redirect to="/browse" />} />
 
         <Route exact path="/signup" component={Signup} />
+        <Route exact path="/browse" component={Browse} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route render={() => <Redirect to="/dashboard" />} />
+        <Route render={() => <Redirect to="/browse" />} />
       </Switch>
       
     </Fragment>

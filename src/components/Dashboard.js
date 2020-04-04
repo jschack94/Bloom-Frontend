@@ -1,12 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import LoggedInHeader from './LoggedInHeader'
 
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import * as actions from  '../actions'
 import withAuth from '../hocs/withAuth'
 
+import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
+
 import AppBar from '@material-ui/core/AppBar'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
@@ -20,6 +22,10 @@ function TabContainer({ children, dir }) {
   )
 }
 
+TabContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+  dir: PropTypes.string.isRequired,
+}
 
 const styles = theme => ({
   root: {
@@ -33,41 +39,43 @@ const styles = theme => ({
   },
 })
 
+const Dashboard = (props) => {
 
-class Dashboard extends React.Component{
+  const { classes, theme } = props
 
-    render(){
+  return (
+    <div className={classes.root}>
+      <LoggedInHeader />
+      <AppBar position="relative" color="default">
+        <Tabs
+          value={props.dashboardTab}
+          onChange={(event, value) => props.dashboardClickTab(event, value)}
+          indicatorColor="primary"
+          textColor="primary"
+          fullWidth >
+          <Tab label="My Mentors" />
+          <Tab label="My Mentees" />
+        </Tabs>
+      </AppBar>
+      
+      
+   
+    </div>
+  )
+}
 
-    const {loggedIn} = this.props
-      return(
-        <div className="home">
-        
-  
-        {loggedIn? (
-          <div>
-          <h2>CONGRATS WE HIT THE DASHBOARD</h2>
-          
-          
-        </div>
-      ) : (
-          <h2>Bloom <p></p>  Please <Link to={"/login"} >Log in</Link> or <Link to={"/signup"}>Register</Link></h2>
-      )
-    }
-  
-        </div>
-      )
-    }
-  }
-  
+Dashboard.propTypes = {
+  classes: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired,
+}
 
-function mapStateToProps({ dashboardReducer: { dashboardTab }, usersReducer: { loggedIn }  }) {
+function mapStateToProps({ dashboardReducer: { dashboardTab } }) {
   return {
     dashboardTab,
-    loggedIn,
   }
 }
 
-export default compose(
+export default withAuth(compose(
   withStyles(styles, { withTheme: true }),
   connect(mapStateToProps, actions)
-)(Dashboard)
+)(Dashboard))

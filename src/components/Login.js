@@ -4,6 +4,7 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import * as actions from  '../actions'
+import LoggedOutHeader from './LoggedOutHeader'
 
 
 
@@ -80,12 +81,12 @@ class Login extends React.Component {
     const { email_address, password } = this.state
 
     if (loggedIn) {
-      return <Redirect to={location.state ? location.state.currentPage : "/dashboard"} />
+      return <Redirect to={location.state ? location.state.currentPage : "/browse"} />
     } else {
       return (
         <div className={classes.root}>
           {error ? this.errorFlash(error) : null}
-          
+          <LoggedOutHeader />
           <Paper className={classes.paper} elevation={1}>
             <form
               onSubmit={this.handleLoginSubmit}
@@ -116,7 +117,7 @@ class Login extends React.Component {
               </Button>
             </form>
           </Paper>
-          <p style={{ textAlign: 'center' }}>Don't have an account? <Link to="/login" style={{ textDecoration: 'none'}}>Sign Up</Link></p>
+          <p style={{ textAlign: 'center' }}>Don't have an account? <Link to="/signup" style={{ textDecoration: 'none'}}>Sign Up</Link></p>
         </div>
       )
     }
