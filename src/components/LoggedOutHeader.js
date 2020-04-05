@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
+import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -14,10 +14,7 @@ const styles = {
     marginLeft: 130,
     marginRight: 130,
   },
-  root: {
-    flexGrow: 1,
-    zIndex: 2,
-  },
+ 
   grow: {
     flexGrow: 1,
   },
@@ -30,9 +27,9 @@ const LoggedOutHeader = (props) => {
       <AppBar position="fixed">
         <div className={classes.layout}>
           <Toolbar>
-            <Typography variant="title" color="inherit" className={classes.grow}>
-              <Link to="/" style={{ textDecoration: 'none', color:'white'}}>
-                Bloom
+            <Typography variant="title" className={classes.grow}>
+              <Link to="/" style={{ textDecoration: 'none', color:'white'}}> 
+                BLOOM <img src={'https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png'} alt="Logo" align="middle" width="75" height="75"/>
               </Link>
             </Typography>
             <Link to="/login" style={{ textDecoration: 'none', color:'white'}}>
@@ -41,7 +38,7 @@ const LoggedOutHeader = (props) => {
               </Button>
             </Link>
             <Link to="/signup" style={{ textDecoration: 'none', color:'white'}}>
-              <Button color="inherit" >
+              <Button variant="contained"  color="primary" >
                 Sign Up
               </Button>
             </Link>
@@ -52,5 +49,8 @@ const LoggedOutHeader = (props) => {
   )
 }
 
+LoggedOutHeader.propTypes = {
+  classes: PropTypes.object.isRequired,
+}
 
 export default withStyles(styles)(LoggedOutHeader)

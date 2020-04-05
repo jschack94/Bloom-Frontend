@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import * as actions from  '../actions'
 import withAuth from '../hocs/withAuth'
-import RequestMentorButton from './RequestMentorButton'
+
+
 
 import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
@@ -72,7 +73,7 @@ class Browse extends React.Component {
                   GitHub:
                   Personal Website: */}
                 </div>
-                <RequestMentorButton disable={true} mentor={mentor} />
+                
               </div>
             </Paper> :
             <Paper className={classes.paper} elevation={1} key={mentor.id}>
@@ -91,7 +92,7 @@ class Browse extends React.Component {
                   GitHub:
                   Personal Website: */}
                 </div>
-                <RequestMentorButton disable={false} mentor={mentor} />
+                
               </div>
             </Paper>
           )))

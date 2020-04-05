@@ -7,7 +7,7 @@ import * as actions from  '../actions'
 import LoggedOutHeader from './LoggedOutHeader'
 
 
-
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
@@ -81,7 +81,7 @@ class Login extends React.Component {
     const { email_address, password } = this.state
 
     if (loggedIn) {
-      return <Redirect to={location.state ? location.state.currentPage : "/browse"} />
+      return <Redirect to={location.state ? location.state.currentPage : "/dashboard"} />
     } else {
       return (
         <div className={classes.root}>
@@ -122,6 +122,10 @@ class Login extends React.Component {
       )
     }
   }
+}
+
+Login.propTypes = {
+  classes: PropTypes.object.isRequired,
 }
 
 

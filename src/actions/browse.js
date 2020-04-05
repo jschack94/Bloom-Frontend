@@ -14,30 +14,12 @@ export function setAllMentors(mentors) {
   }
 }
 
-export const requestMentorship = (mentee_id, mentor_id) => {
-  return (dispatch) => {
-    fetch("http://localhost:3000/api/v1//connections", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      body: JSON.stringify({
-        connection: {
-          mentee_id: mentee_id,
-          mentor_id: mentor_id,
-          accepted: false,
-        }
-      })
-    })
-  }
-}
 
 export const fetchAllConnections = (user_id) => {
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/connections")
     .then(res => res.json())
-    .then(json => json.filter(connections => connections.mentee.id === user_id))
+    .then(json => json.filter(connection => connection.mentee.id === user_id))
     .then(connections => {
       dispatch(setAllConnections(connections))
     })
@@ -46,7 +28,7 @@ export const fetchAllConnections = (user_id) => {
 
 export function setAllConnections(connections) {
   return {
-    type: 'SET_ALL_Connections',
+    type: 'SET_ALL_CONNECTIONS',
     payload: connections,
   }
 }

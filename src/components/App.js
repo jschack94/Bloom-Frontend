@@ -7,24 +7,25 @@ import Signup from './Signup'
 import Login from './Login'
 import Dashboard from './Dashboard'
 import Browse from './Browse'
+import Profile from './Profile'
 
 
 
-const App = () => {
+const App = (props) => {
 
   return (
     <Fragment>
-      
       <Switch>
-        <Route exact path="/" render={() => <Redirect to="/browse" />} />
+        <Route exact path="/" render={() => <Redirect to="/login" />} />
 
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/browse" component={Browse} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/profile" component={Profile} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route render={() => <Redirect to="/browse" />} />
+        <Route render={() => <Redirect to="/login" />} />
       </Switch>
-      
+      <p style={{zIndex: 2, margin: 0, position: 'fixed', bottom: 0, textAlign: 'center', width: '100%', backgroundColor: 'white'}}>BLOOM 2020 by Jonathan Schack <img src={'https://media.glassdoor.com/sqll/964142/flatiron-school-squarelogo-1479222088421.png'} alt="Logo" align="middle"width="50" height="50"/></p>
     </Fragment>
   )
 }
