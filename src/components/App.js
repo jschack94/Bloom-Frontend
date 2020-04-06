@@ -7,11 +7,13 @@ import Signup from './Signup'
 import Login from './Login'
 import Dashboard from './Dashboard'
 import Browse from './Browse'
-import Profile from './Profile'
+import CoffeeMap from './CoffeeMap'
 
 
 
-const App = (props) => {
+
+
+const App = () => {
 
   return (
     <Fragment>
@@ -21,7 +23,8 @@ const App = (props) => {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/browse" component={Browse} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/coffeemap" component={CoffeeMap} />
+
         <Route exact path="/dashboard" component={Dashboard} />
         <Route render={() => <Redirect to="/login" />} />
       </Switch>

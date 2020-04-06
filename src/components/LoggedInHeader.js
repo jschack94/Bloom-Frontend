@@ -13,8 +13,9 @@ import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import DashboardRounded from '@material-ui/icons/DashboardRounded'
-import ExploreRounded from '@material-ui/icons/ExploreRounded'
 import NotificationsRounded from '@material-ui/icons/NotificationsRounded'
+import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
+import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 
 
 const styles = {
@@ -59,7 +60,12 @@ class LoggedInHeader extends React.Component {
                 </Link>
                 <Link to="/browse" style={{ color:'white'}}>
                   <IconButton color="inherit">
-                    <ExploreRounded />
+                  <SearchRoundedIcon />
+                  </IconButton>
+                </Link>
+                <Link to="/coffeemap" style={{ color:'white'}}>
+                  <IconButton color="inherit">
+                    <RoomRoundedIcon />
                   </IconButton>
                 </Link>
                 <IconButton
