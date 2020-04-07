@@ -5,17 +5,22 @@ import { compose } from 'redux'
 import * as actions from  '../actions'
 
 
-import PropTypes from 'prop-types'
+
 import { withStyles } from '@material-ui/core/styles'
+import DashboardRounded from '@material-ui/icons/DashboardRounded'
+import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
+import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
+import PropTypes from 'prop-types'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import AccountCircle from '@material-ui/icons/AccountCircle'
-import DashboardRounded from '@material-ui/icons/DashboardRounded'
+import ExploreRounded from '@material-ui/icons/ExploreRounded'
 import NotificationsRounded from '@material-ui/icons/NotificationsRounded'
-import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
-import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
+import MenuItem from '@material-ui/core/MenuItem'
+import Menu from '@material-ui/core/Menu'
+import Badge from '@material-ui/core/Badge'
 
 
 const styles = {
@@ -35,11 +40,27 @@ const styles = {
 
 class LoggedInHeader extends React.Component {
 
-  
+  state = {
+    profileMenu: null,
+  }
+
+  openProfileMenu = (event) => {
+    this.setState({
+      profileMenu: event.currentTarget,
+    })
+  }
+
+  closeProfileMenu = () => {
+    this.setState({
+      profileMenu: null,
+    })
+  }
+
 
   render() {
 
     const { classes } = this.props
+    const openProfile = Boolean(this.state.profileMenu)
     
 
     return (
@@ -49,7 +70,7 @@ class LoggedInHeader extends React.Component {
             <Toolbar>
               <Typography variant="title" color="inherit" className={classes.grow}>
               <Link to="/" style={{ textDecoration: 'none', color:'white'}}> 
-                  BLOOM <img src={'https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png'} alt="Logo" align="middle" width="75" height="75"/>
+                   <img src={'https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png'} alt="Logo" align="left" width="75" height="75"/>
                 </Link>
               </Typography>
               <div>
@@ -68,17 +89,38 @@ class LoggedInHeader extends React.Component {
                     <RoomRoundedIcon />
                   </IconButton>
                 </Link>
+                <Link to="/browse" style={{ color:'white'}}>
+                  <IconButton color="inherit">
+                    <NotificationsRounded />
+                  </IconButton>
+                </Link>
+                
                 <IconButton
-                aria-haspopup="true"
-                  color="inherit">          
-                <NotificationsRounded />
-                </IconButton>
-                <IconButton
-                aria-haspopup="true"
+                  aria-owns={openProfile ? 'account-circle' : null}
+                  aria-haspopup="true"
+                  onClick={(event) => this.openProfileMenu(event)}
                   color="inherit">
                   <AccountCircle />
                 </IconButton>
-                </div>
+                <Menu
+                  id="account-circle"
+                  anchorEl={this.state.profileMenu}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                  }}
+                  open={openProfile}
+                  onClose={() => this.closeProfileMenu()}>
+                  <Link to="/profile" style={{ color:'white'}}>
+                    <MenuItem onClick={() => this.closeProfileMenu}>Profile</MenuItem>
+                  </Link>
+                  <MenuItem onClick={() => this.props.logOut()}>Logout</MenuItem>
+                </Menu>
+              </div>
             </Toolbar>
           </div>
         </AppBar>

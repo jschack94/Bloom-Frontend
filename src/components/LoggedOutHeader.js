@@ -24,12 +24,12 @@ const LoggedOutHeader = (props) => {
   const { classes } = props
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" variant="dense">
         <div className={classes.layout}>
           <Toolbar>
             <Typography variant="title" className={classes.grow}>
               <Link to="/" style={{ textDecoration: 'none', color:'white'}}> 
-                BLOOM <img src={'https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png'} alt="Logo" align="middle" width="75" height="75"/>
+                 <img src={'https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png'} alt="Logo" align="left" width="75" height="75"/>
               </Link>
             </Typography>
             <Link to="/login" style={{ textDecoration: 'none', color:'white'}}>
@@ -40,6 +40,11 @@ const LoggedOutHeader = (props) => {
             <Link to="/signup" style={{ textDecoration: 'none', color:'white'}}>
               <Button variant="contained"  color="primary" >
                 Sign Up
+              </Button>
+            </Link>
+            <Link to="/about" style={{ textDecoration: 'none', color:'white'}}>
+              <Button variant="contained"  color="primary" >
+                About 
               </Button>
             </Link>
           </Toolbar>

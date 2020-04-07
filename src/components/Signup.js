@@ -93,7 +93,7 @@ class Signup extends React.Component {
           <LoggedOutHeader />
           <Paper className={classes.paper} elevation={1}>
             <Typography variant="headline" component="h3">
-              Sign up to start your career journey with the help of the community of your professions.
+              Sign up to start your career journey with the help of your community.
             </Typography>
             <form
               onSubmit={this.handleSignupSubmit}
@@ -134,7 +134,7 @@ class Signup extends React.Component {
                 type="submit"
                 color="primary"
                 className={classes.button}>
-                Sign Up
+                Continue to payment options
               </Button>
             </form>
             <Typography component="p">

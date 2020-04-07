@@ -5,14 +5,15 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import * as actions from  '../actions'
 import LoggedOutHeader from './LoggedOutHeader'
+import Welcome from 'react-welcome-page'
 
 
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ({
   root: {
@@ -88,6 +89,10 @@ class Login extends React.Component {
           {error ? this.errorFlash(error) : null}
           <LoggedOutHeader />
           <Paper className={classes.paper} elevation={1}>
+            
+          <Typography variant="headline" component="h3">
+              Welcome Back to Bloom! Login to be reconnected with your mentors and mentees.
+            </Typography>
             <form
               onSubmit={this.handleLoginSubmit}
               className={classes.container}
@@ -118,15 +123,33 @@ class Login extends React.Component {
             </form>
           </Paper>
           <p style={{ textAlign: 'center' }}>Don't have an account? <Link to="/signup" style={{ textDecoration: 'none'}}>Sign Up</Link></p>
-        </div>
+          <Welcome
+		loopDuration={1800}
+		data={[
+		{
+		image: "https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png",
+		text: 'LOADING...',
+		imageAnimation: 'bounce',
+		textAnimation: 'flipInX',
+		backgroundColor: '#daf0f2',
+		textColor: '#002134'
+		},
+		{
+		image: "https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png",
+    text: <strong>WELCOME TO BLOOM</strong>,
+    backgroundColor: '#daf0f2'
+}
+]}
+
+/> 
+
+
+    </div>
       )
     }
   }
 }
 
-Login.propTypes = {
-  classes: PropTypes.object.isRequired,
-}
 
 
 

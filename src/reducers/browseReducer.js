@@ -1,6 +1,6 @@
 const initialState = {
-  allMentors: null,
-  allConnections: null,
+  allMentors: [],
+  allConnections: [],
 }
 
 export default function browseReducer(state = initialState, action) {

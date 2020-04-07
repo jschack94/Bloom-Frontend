@@ -11,6 +11,7 @@ import mapStyles from "../mapStyles";
 import LoggedInHeader from './LoggedInHeader'
 
 
+
 function Map() {
   const [selectedCoffee, setSelectedCoffee] = useState(null);
 
@@ -63,6 +64,7 @@ function Map() {
           <div>
             <h2>{selectedCoffee.properties.NAME}</h2>
             <p>{selectedCoffee.properties.DESCRIPTIO}</p>
+            <p>{selectedCoffee.properties.ADDRESS}</p>
           </div>
         </InfoWindow>
       )}
@@ -76,14 +78,20 @@ const MapWrapped = withScriptjs(withGoogleMap(Map));
 export default function CoffeeMap() {
   return (
     
-    <div style={{ width: "100vw", height: "100vh" }}>
+    
+    <div style={{ width: "100vw", height: "100vh" }} >
       <LoggedInHeader />
+      <p></p>
       <MapWrapped
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAKZJRWgYSIu5211lYz9Vz8rj1M6Zsoqks`}
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `100%` }} />}
+        loadingElement={<div style={{ height: `75%` }} />}
+        containerElement={<div style={{ height: `75%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
-      />
-    </div>
+       />
+      <h3>Some of our favorite coffee shops around the city to break the ice with your mentor/mentee!</h3>
+        
+      
+      
+      </div>
   );
 }
