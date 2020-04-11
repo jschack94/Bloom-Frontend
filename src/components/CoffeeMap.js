@@ -8,15 +8,14 @@ import {
 } from "react-google-maps";
 import * as coffeeData from "../data/coffee.json";
 import mapStyles from "../mapStyles";
-import LoggedInHeader from './LoggedInHeader'
-
-
+import LoggedInHeader from "./LoggedInHeader";
+import Jumbotron from "react-bootstrap/Jumbotron";
 
 function Map() {
   const [selectedCoffee, setSelectedCoffee] = useState(null);
 
   useEffect(() => {
-    const listener = e => {
+    const listener = (e) => {
       if (e.key === "Escape") {
         setSelectedCoffee(null);
       }
@@ -27,14 +26,14 @@ function Map() {
       window.removeEventListener("keydown", listener);
     };
   }, []);
-  
+
   return (
     <GoogleMap
       defaultZoom={10}
-      defaultCenter={{ lat: 41.878113, lng: -87.629799}}
+      defaultCenter={{ lat: 41.878113, lng: -87.629799 }}
       defaultOptions={{ styles: mapStyles }}
     >
-      {coffeeData.features.map(coffee => (
+      {coffeeData.features.map((coffee) => (
         <Marker
           key={coffee.properties.COFFEE_ID}
           position={{
@@ -51,7 +50,7 @@ function Map() {
         />
       ))}
 
-{selectedCoffee && (
+      {selectedCoffee && (
         <InfoWindow
           onCloseClick={() => {
             setSelectedCoffee(null);
@@ -71,27 +70,31 @@ function Map() {
     </GoogleMap>
   );
 }
-    
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 export default function CoffeeMap() {
   return (
-    
-    
-    <div style={{ width: "100vw", height: "100vh" }} >
+    <div style={{ width: "100vw", height: "100vh" }}>
       <LoggedInHeader />
-      <p></p>
+
       <MapWrapped
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAKZJRWgYSIu5211lYz9Vz8rj1M6Zsoqks`}
         loadingElement={<div style={{ height: `75%` }} />}
         containerElement={<div style={{ height: `75%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
-       />
-      <h3>Some of our favorite coffee shops around the city to break the ice with your mentor/mentee!</h3>
-        
-      
-      
-      </div>
+      />
+      <Jumbotron>
+        <h1>
+          <strong>Brew Map</strong>
+        </h1>
+        <h5>
+          <strong>
+            Our Favorite Coffee Shops in your Neighborhood to break the ice with
+            your mentor/mentee
+          </strong>
+        </h5>
+      </Jumbotron>
+    </div>
   );
 }

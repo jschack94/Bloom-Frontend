@@ -1,9 +1,11 @@
 const defaultState = {
-  user: null,
+  user: [],
   loggedIn: false,
   failedLogin: false,
   error: null,
-
+  notifications: null,
+  newNotifications: 0,
+  
 }
 
 const usersReducer = (state = defaultState, action) => {
@@ -13,8 +15,9 @@ const usersReducer = (state = defaultState, action) => {
         ...state,
         user: action.payload,
         loggedIn: true,
+        notifications: action.payload.received_notifications,
+        newNotifications: action.payload.received_notifications.filter(notification => !notification.opened).length,
         
-       
       }
     case 'FAILED_LOGIN':
       return {
@@ -35,7 +38,24 @@ const usersReducer = (state = defaultState, action) => {
         failedLogin: false,
         error: null,
       }
-  
+    case 'RECEIVED_NOTIFICATIONS':
+      if (action.payload.recipient.id === state.user.id) {
+        return {
+          ...state,
+          newNotifications: state.newNotifications + 1,
+          notifications: [...state.notifications, action.payload],
+        }
+      } else {
+        return {
+          ...state,
+          notifications: [...state.notifications],
+        }
+      }
+    case 'CLEAR_NOTIFICATIONS':
+      return {
+        ...state,
+        newNotifications: 0,
+      }
     default:
       return state
   }

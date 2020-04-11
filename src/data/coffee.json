@@ -136,6 +136,487 @@
           ]
         }
       },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 15,
+          "FACILITYID": 49211,
+          "NAME": "The Wormhole Coffee",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1462 N Milwaukee Ave",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "80s-themed rustic coffee shop, complete with a DeLorean, pouring locally roasted coffee.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6746231,
+            41.9083871
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 16,
+          "FACILITYID": 49211,
+          "NAME": "Ipsento Coffee",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "2035 N Western Ave",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Hip counter-serve cafe with funky furnishings & a menu of sandwiches, pastries & light bites.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6872335,
+            41.918645
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 17,
+          "FACILITYID": 49211,
+          "NAME": "Dark Matter Coffee - The Mothership",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "738 N Western Ave",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Offbeat coffee bar & roasting facility offering tours & artisanal brews in a mural-covered space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.687107,
+            41.8950429
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 20,
+          "FACILITYID": 49211,
+          "NAME": "Intelligentsia Coffee Broadway Coffeebar",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "3123 N Broadway",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "High-end coffee bar chain serving daily roasted brews in an industrial-chic setting.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6441813,
+            41.9382563
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+      {"type": "Feature",
+        "properties": {
+          "COFFEE_ID": 3,
+          "FACILITYID": 49211,
+          "NAME": "My Place",
+          "NAME_FR": "Planchodrome Vista",
+          "ADDRESS": "1400 N Lake Shore Drive",
+          "ADDRESS_FR": "720, promenade Vistapark",
+          "FACILITY_T": "flat",
+          "FACILITY_1": "plat",
+          "ACCESSCTRL": "no/non",
+          "ACCESSIBLE": "yes/oui",
+          "OPEN": null,
+          "NOTES": "Coffee",
+          "MODIFIED_D": "2018/11/29",
+          "CREATED_DA": "2018/06/22",
+          "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+          "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+          "DESCRIPTIO": "Low-key cafe serving coffee (roasted on-site), tea & signature marshmallow lattes in a modern space.",
+          "DESCRIPT_1": "Surface plane, 5 modules",
+          "PICTURE_LI": null,
+          "PICTURE_DE": null,
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6313754,
+            41.8945947
+          ]
+        }
+      },
+
       {
         "type": "Feature",
         "properties": {
@@ -164,7 +645,7 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -87.6382156,
+            -87.6382154,
             41.9089672
           ]
         }

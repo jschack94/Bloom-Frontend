@@ -17,7 +17,7 @@ const withAuth = (WrappedComponent) => {
       } else {
         return <Redirect to={{
           pathname: '/login',
-          state: { currentPage: this.props.location.pathname }
+          
         }}
       />
       }
