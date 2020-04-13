@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import * as actions from "../actions";
 import LoggedOutHeader from "./LoggedOutHeader";
-import Dropzone from "react-dropzone";
+
 import { MDBBtn } from "mdbreact";
 
 import PropTypes from "prop-types";
@@ -51,6 +51,8 @@ const styles = (theme) => ({
   }
 });
 
+
+
 class Signup extends React.Component {
   state = {
     email_address: "",
@@ -66,12 +68,8 @@ class Signup extends React.Component {
     });
   };
 
-  onDrop = (file) => {
-    this.setState({
-      avatar: file[0]
-    });
-    console.log(file);
-  };
+ 
+  
 
   handleSignupSubmit = (event) => {
     event.preventDefault();
@@ -100,9 +98,7 @@ class Signup extends React.Component {
     const { classes, loggedIn, error } = this.props;
     const { email_address, password, first_name, last_name } = this.state;
 
-    if (loggedIn) {
-      return <Redirect to={"/dashboard"} />;
-    } else {
+   
       return (
         <div className={classes.root}>
           {error ? this.errorFlash(error) : null}
@@ -158,27 +154,16 @@ class Signup extends React.Component {
                 className={classNames(classes.textField, classes.dense)}
                 margin="dense"
               />
-              <Dropzone onDrop={this.onDrop}>
-                {({ getRootProps, getInputProps }) => (
-                  <div {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    Click me to upload a file!
-                  </div>
-                )}
-              </Dropzone>
-              {this.state.avatar ? (
-                <div>
-                  <h2>Uploading {this.state.avatar.length} files...</h2>
-                  <img width="100px" src={this.state.avatar} />
-                </div>
-              ) : null}
-              <p></p>
-              <p></p>
-              <p></p>
+            
+              
+                
+              
 
               <MDBBtn type="submit" gradient="blue" className={classes.button}>
                 Submit
               </MDBBtn>
+
+             
             </form>
             <Typography component="p">
               Already have an account?{" "}
@@ -197,11 +182,13 @@ class Signup extends React.Component {
               .
             </Typography>
           </Paper>
+         
         </div>
+        
       );
     }
   }
-}
+
 
 Signup.propTypes = {
   classes: PropTypes.object.isRequired

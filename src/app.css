@@ -63,20 +63,6 @@ body {
   display: inline-flex;
 }
 
-button.button-credit-card {
-  display: block;
-  line-height: 1.25em;
-  vertical-align: middle;
-  height: 45px;
-  width: 385px;
-  border-radius: 10px;
-  text-align: center;
-  margin: 5px auto;
-  font-size: 22px;
-  font-weight: 600;
-  background-color: #000;
-  color: #FFF;
-}
 
 button.wallet-button {
   display: block;
@@ -172,3 +158,4 @@ input::placeholder {
   background-color: #eee;
   display: inline-block;
 }
+

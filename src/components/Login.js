@@ -113,14 +113,7 @@ class Login extends React.Component {
           <br></br>
           <br></br>
 
-          <MDBJumbotron className="d-block p-2 bg-primary text-white" fluid>
-            <p></p>
-
-            <MDBContainer>
-              <h2 className="display-4">Welcome Back to Bloom</h2>
-              <p className="lead">Welcome to Your Professional Community.</p>
-            </MDBContainer>
-          </MDBJumbotron>
+        
 
           <MDBContainer className="align-middle">
             <MDBRow>
@@ -129,7 +122,8 @@ class Login extends React.Component {
                   <MDBCardBody className="mx-4">
                     <div className="text-center">
                       <h3 className="dark-grey-text mb-5">
-                        <strong>Sign in</strong>
+                        <strong>Welcome Back</strong>
+                        <h5>Don't miss your next opportunity. Sign in to stay conncted with your</h5>
                       </h3>
                     </div>
                     <form

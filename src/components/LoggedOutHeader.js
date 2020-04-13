@@ -40,6 +40,7 @@ const LoggedOutHeader = (props) => {
                 />
               </Link>
             </Typography>
+            
             <Link
               to="/login"
               style={{ textDecoration: "none", color: "white" }}
