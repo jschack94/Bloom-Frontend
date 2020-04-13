@@ -174,10 +174,12 @@ class LoggedInHeader extends React.Component {
                       Profile
                     </MenuItem>
                   </Link>
-                  
-                  <MenuItem onClick={() => this.props.logOut()}>
-                    Logout
-                  </MenuItem>
+                  <Link to="/Pay" style={{ color: "white" }}>
+                    <MenuItem onClick={() => this.closeProfileMenu}>
+                      Make Payment
+                    </MenuItem>
+                  </Link>
+                  <MenuItem onClick={() => this.props.logOut()}>Logout</MenuItem>
                 </Menu>
               </div>
             </Toolbar>
@@ -189,11 +191,12 @@ class LoggedInHeader extends React.Component {
 }
 
 function mapStateToProps({
-  usersReducer: { user, newNotifications },
+  usersReducer: { user, newNotifications, logOut },
   dashboardReducer: { profileMenu, notificationsMenu }
 }) {
   return {
     user,
+    logOut,
     newNotifications,
     profileMenu,
     notificationsMenu

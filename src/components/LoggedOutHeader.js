@@ -41,6 +41,14 @@ const LoggedOutHeader = (props) => {
               </Link>
             </Typography>
             <Link
+              to="/home"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <Button variant="contained" color="primary">
+                Home
+              </Button>
+            </Link>
+            <Link
               to="/login"
               style={{ textDecoration: "none", color: "white" }}
             >
@@ -48,6 +56,8 @@ const LoggedOutHeader = (props) => {
                 Log In
               </Button>
             </Link>
+            
+            
             <Link
               to="/signup"
               style={{ textDecoration: "none", color: "white" }}

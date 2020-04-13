@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Redirect } from "react-router";
+import { Link, Redirect} from "react-router-dom";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import * as actions from "../actions";
@@ -57,7 +56,7 @@ class Signup extends React.Component {
     password: "",
     first_name: "",
     last_name: "",
-    avatar: null
+    
   };
 
   handleChange = (event) => {
@@ -75,14 +74,14 @@ class Signup extends React.Component {
       this.state.password,
       this.state.first_name,
       this.state.last_name,
-      this.state.avatar
+      
     );
     this.setState({
       email_address: "",
       password: "",
       first_name: "",
       last_name: "",
-      avatar: null
+      
     });
   };
 

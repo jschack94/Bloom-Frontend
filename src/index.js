@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect } from 'react-router-dom'
 import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
 import store from './store'
@@ -11,9 +11,6 @@ import { ActionCableProvider } from 'react-actioncable-provider'
 import '@fortawesome/fontawesome-free/css/all.min.css'; import
 'bootstrap-css-only/css/bootstrap.min.css'; import
 'mdbreact/dist/css/mdb.css';
-
-
-
 
 
 

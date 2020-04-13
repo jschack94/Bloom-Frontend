@@ -1,0 +1,107 @@
+import React from "react";
+import LoggedOutHeader from "./LoggedOutHeader";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+
+import {
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBCarousel, 
+  MDBCarouselCaption,
+  MDBNavbarNav,
+  MDBNavItem,
+  MDBNavLink,
+  MDBNavbarToggler,
+  MDBCollapse,
+  MDBMask,
+  MDBRow,
+  MDBCol,
+  MDBBtn,
+  MDBView,
+  MDBContainer,
+  MDBFormInline,
+  MDBAnimation
+} from "mdbreact";
+import "../app.css";
+
+class Home extends React.Component {
+  state = {
+    collapsed: false
+  };
+
+  handleTogglerClick = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  };
+
+  render() {
+    const overlay = (
+      <div
+        id="sidenav-overlay"
+        style={{ backgroundColor: "transparent" }}
+        onClick={this.handleTogglerClick}
+      />
+    );
+    return (
+      <div id="apppage">
+          <LoggedOutHeader />
+        <Router>
+          <div>
+           {this.state.collapsed && overlay}
+          </div>
+        </Router>
+        <MDBView>
+          <MDBMask className="d-flex justify-content-center align-items-center gradient">
+            <MDBContainer>
+              <MDBRow>
+                <MDBCol
+                  md="6"
+                  className="white-text text-center text-md-left mt-xl-5 mb-5"
+                >
+                  <MDBAnimation type="fadeInLeft" delay=".3s">
+                    <h1 className="h1-responsive font-weight-bold mt-sm-5">
+                      Welcome to your Professional Community
+                    </h1>
+                    <hr className="hr-light" />
+                    <h6 className="mb-4">
+                    Bloom is the best place to learn about the industry and build relationships with likeminded individuals who want to help you along the way.
+                    </h6>
+                    <Link
+              to="/login"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <Button variant="contained" color="primary">
+                Log In
+              </Button>
+            </Link>
+            <Link
+              to="/about"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <Button variant="contained" color="primary">
+                Learn More
+              </Button>
+            </Link>
+                  </MDBAnimation>
+                </MDBCol>
+
+                <MDBCol md="6" xl="5" className="mt-xl-5">
+                  <MDBAnimation type="fadeInRight" delay=".3s">
+                    <img
+                      src="https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png"
+                      alt=""
+                      className="img-fluid"
+                    />
+                  </MDBAnimation>
+                </MDBCol>
+              </MDBRow>
+            </MDBContainer>
+          </MDBMask>
+        </MDBView>
+      </div>
+    );
+  }
+}
+
+export default Home;

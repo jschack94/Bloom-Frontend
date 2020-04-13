@@ -7,6 +7,7 @@ import { compose } from "redux";
 import * as actions from "../actions";
 import withAuth from "../hocs/withAuth";
 import { MDBContainer, MDBAlert } from 'mdbreact';
+import Welcome from "react-welcome-page";
 
 import { withStyles } from "@material-ui/core/styles";
 import SwipeableViews from "react-swipeable-views";
@@ -41,6 +42,26 @@ const Dashboard = (props) => {
   return (
     <div className={classes.root}>
       <LoggedInHeader />
+      <Welcome
+            loopDuration={1800}
+            data={[
+              {
+                image:
+                  "https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png",
+                text: "LOADING...",
+                imageAnimation: "bounce",
+                textAnimation: "flipInX",
+                backgroundColor: "#daf0f2",
+                textColor: "#002134"
+              },
+              {
+                image:
+                  "https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png",
+                text: <strong>WELCOME TO BLOOM</strong>,
+                backgroundColor: "#daf0f2"
+              }
+            ]}
+          />
       <MDBContainer>
       <MDBAlert color="warning" dismiss>
         <strong>You have successfully logged in! </strong><p>
@@ -71,6 +92,7 @@ const Dashboard = (props) => {
           <MenteesContainer />
         </TabContainer>
       </SwipeableViews>
+      
     </div>
   );
 };
