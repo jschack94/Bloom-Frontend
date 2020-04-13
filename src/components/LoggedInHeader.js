@@ -174,11 +174,7 @@ class LoggedInHeader extends React.Component {
                       Profile
                     </MenuItem>
                   </Link>
-                  <Link to="/Pay" style={{ color: "white" }}>
-                    <MenuItem onClick={() => this.closeProfileMenu}>
-                      Make Payment
-                    </MenuItem>
-                  </Link>
+                  
                   <MenuItem onClick={() => this.props.logOut()}>
                     Logout
                   </MenuItem>

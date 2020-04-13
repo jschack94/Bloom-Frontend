@@ -51,8 +51,6 @@ const styles = (theme) => ({
   }
 });
 
-
-
 class Signup extends React.Component {
   state = {
     email_address: "",
@@ -69,7 +67,6 @@ class Signup extends React.Component {
   };
 
  
-  
 
   handleSignupSubmit = (event) => {
     event.preventDefault();
@@ -98,7 +95,9 @@ class Signup extends React.Component {
     const { classes, loggedIn, error } = this.props;
     const { email_address, password, first_name, last_name } = this.state;
 
-   
+    if (loggedIn) {
+      return <Redirect to={"/dashboard"} />;
+    } else {
       return (
         <div className={classes.root}>
           {error ? this.errorFlash(error) : null}
@@ -154,16 +153,14 @@ class Signup extends React.Component {
                 className={classNames(classes.textField, classes.dense)}
                 margin="dense"
               />
-            
               
-                
-              
+              <p></p>
+              <p></p>
+              <p></p>
 
               <MDBBtn type="submit" gradient="blue" className={classes.button}>
                 Submit
               </MDBBtn>
-
-             
             </form>
             <Typography component="p">
               Already have an account?{" "}
@@ -182,13 +179,11 @@ class Signup extends React.Component {
               .
             </Typography>
           </Paper>
-         
         </div>
-        
       );
     }
   }
-
+}
 
 Signup.propTypes = {
   classes: PropTypes.object.isRequired

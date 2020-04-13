@@ -13,7 +13,7 @@ import CoffeeMap from "./CoffeeMap";
 import Profile from "./Profile";
 
 import Email from "./Email";
-import Pay from "./Pay";
+
 
 const App = (props) => {
   return (
@@ -30,7 +30,7 @@ const App = (props) => {
         <Route exact path="/login" component={Login} />
 
         <Route exact path="/Email" component={Email} />
-        <Route exact path="/Pay" component={Pay} />
+       
 
         <Route exact path="/about" component={About} />
         <Route exact path="/coffeemap" component={CoffeeMap} />

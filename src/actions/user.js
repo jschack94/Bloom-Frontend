@@ -1,4 +1,4 @@
-export const signUp = (email_address, password, first_name, last_name, avatar) => {
+export const signUp = (email_address, password, first_name, last_name) => {
   return (dispatch) => {
 
    
@@ -15,7 +15,7 @@ fetch("http://localhost:3000/api/v1/users", {
           password: password,
           first_name: first_name,
           last_name: last_name,
-          avatar: avatar
+          
       
           }
         
