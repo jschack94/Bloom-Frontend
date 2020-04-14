@@ -20,7 +20,7 @@ const styles = {
   }
 };
 
-const LoggedOutHeader = (props) => {
+const LoggedOutHeader = props => {
   const { classes } = props;
   return (
     <div className={classes.root}>
@@ -40,10 +40,7 @@ const LoggedOutHeader = (props) => {
                 />
               </Link>
             </Typography>
-            <Link
-              to="/home"
-              style={{ textDecoration: "none", color: "white" }}
-            >
+            <Link to="/home" style={{ textDecoration: "none", color: "white" }}>
               <Button variant="contained" color="primary">
                 Home
               </Button>
@@ -56,8 +53,7 @@ const LoggedOutHeader = (props) => {
                 Log In
               </Button>
             </Link>
-            
-            
+
             <Link
               to="/signup"
               style={{ textDecoration: "none", color: "white" }}

@@ -42,7 +42,7 @@ class LoggedInHeader extends React.Component {
     notificationsMenu: null
   };
 
-  openProfileMenu = (event) => {
+  openProfileMenu = event => {
     this.setState({
       profileMenu: event.currentTarget
     });
@@ -54,7 +54,7 @@ class LoggedInHeader extends React.Component {
     });
   };
 
-  openNotificationsMenu = (event) => {
+  openNotificationsMenu = event => {
     this.setState(
       {
         notificationsMenu: event.currentTarget
@@ -116,7 +116,7 @@ class LoggedInHeader extends React.Component {
                 <IconButton
                   aria-owns={openNotifications ? "notifications" : null}
                   aria-haspopup="true"
-                  onClick={(event) => this.openNotificationsMenu(event)}
+                  onClick={event => this.openNotificationsMenu(event)}
                   color="inherit"
                 >
                   {" "}
@@ -150,7 +150,7 @@ class LoggedInHeader extends React.Component {
                 <IconButton
                   aria-owns={openProfile ? "account-circle" : null}
                   aria-haspopup="true"
-                  onClick={(event) => this.openProfileMenu(event)}
+                  onClick={event => this.openProfileMenu(event)}
                   color="inherit"
                 >
                   <AccountCircle />
@@ -179,7 +179,9 @@ class LoggedInHeader extends React.Component {
                       Make Payment
                     </MenuItem>
                   </Link>
-                  <MenuItem onClick={() => this.props.logOut()}>Logout</MenuItem>
+                  <MenuItem onClick={() => this.props.logOut()}>
+                    Logout
+                  </MenuItem>
                 </Menu>
               </div>
             </Toolbar>

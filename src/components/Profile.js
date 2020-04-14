@@ -15,7 +15,7 @@ import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 
-const styles = (theme) => ({
+const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     width: "auto",
@@ -85,11 +85,11 @@ class Profile extends React.Component {
     will_buy_coffee: this.props.user.will_buy_coffee
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({ [event.target.id]: event.target.value });
   };
 
-  handleAddToArray = (event) => {
+  handleAddToArray = event => {
     if (event.key === "Enter") {
       this.setState(
         {
@@ -100,8 +100,8 @@ class Profile extends React.Component {
     }
   };
 
-  handleDeleteChip = (data) => () => {
-    this.setState((state) => {
+  handleDeleteChip = data => () => {
+    this.setState(state => {
       const expertiseArray =
         state.expertiseArray.length > 0 ? [...state.expertiseArray] : [];
       const chipToDelete = expertiseArray.indexOf(data);
@@ -110,11 +110,11 @@ class Profile extends React.Component {
     });
   };
 
-  handleSwitch = (name) => (event) => {
+  handleSwitch = name => event => {
     this.setState({ [name]: event.target.checked });
   };
 
-  patchUserProfile = (stateUserData) => {
+  patchUserProfile = stateUserData => {
     fetch("http://localhost:3000/api/v1/users", {
       method: "PATCH",
       headers: {
@@ -140,7 +140,7 @@ class Profile extends React.Component {
           will_buy_coffee: stateUserData.will_buy_coffee
         }
       })
-    }).then((res) =>
+    }).then(res =>
       res.status >= 200
         ? alert("Your profile has been updated!")
         : alert("Something went wrong. Please try again later.")

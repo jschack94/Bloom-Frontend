@@ -5,12 +5,14 @@ import Button from "@material-ui/core/Button";
 
 import {
   MDBNavbar,
+  MDBJumbotron,
   MDBNavbarBrand,
-  MDBCarousel, 
+  MDBCarousel,
   MDBCarouselCaption,
   MDBNavbarNav,
   MDBNavItem,
   MDBNavLink,
+  MDBTypography,
   MDBNavbarToggler,
   MDBCollapse,
   MDBMask,
@@ -45,11 +47,9 @@ class Home extends React.Component {
     );
     return (
       <div id="apppage">
-          <LoggedOutHeader />
+        <LoggedOutHeader />
         <Router>
-          <div>
-           {this.state.collapsed && overlay}
-          </div>
+          <div>{this.state.collapsed && overlay}</div>
         </Router>
         <MDBView>
           <MDBMask className="d-flex justify-content-center align-items-center gradient">
@@ -65,24 +65,26 @@ class Home extends React.Component {
                     </h1>
                     <hr className="hr-light" />
                     <h6 className="mb-4">
-                    Bloom is the best place to learn about the industry and build relationships with likeminded individuals who want to help you along the way.
+                      Bloom is the best place to learn about the industry and
+                      build relationships with likeminded individuals who want
+                      to help you along the way.
                     </h6>
                     <Link
-              to="/login"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <Button variant="contained" color="primary">
-                Log In
-              </Button>
-            </Link>
-            <Link
-              to="/about"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <Button variant="contained" color="primary">
-                Learn More
-              </Button>
-            </Link>
+                      to="/login"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      <Button variant="contained" color="primary">
+                        Log In
+                      </Button>
+                    </Link>
+                    <Link
+                      to="/about"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      <Button variant="contained" color="primary">
+                        Learn More
+                      </Button>
+                    </Link>
                   </MDBAnimation>
                 </MDBCol>
 
@@ -99,6 +101,15 @@ class Home extends React.Component {
             </MDBContainer>
           </MDBMask>
         </MDBView>
+        <MDBJumbotron fluid>
+      <MDBContainer>
+      <MDBTypography tag="h4" className="blue-text" variant="display-1">Who is Bloom For?</MDBTypography>
+      
+        <h1 className="display-4" className="blue-text">Anyone looking to navigate their professional life, but needs that extra push from someone else.</h1>
+      
+        
+      </MDBContainer>
+    </MDBJumbotron>
       </div>
     );
   }

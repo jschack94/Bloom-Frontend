@@ -26,9 +26,7 @@ class Pay extends Component {
 
   render() {
     return (
-      this.state.loaded &&
-      
-       <PaymentForm paymentForm={window.SqPaymentForm} />
+      this.state.loaded && <PaymentForm paymentForm={window.SqPaymentForm} />
     );
   }
 }

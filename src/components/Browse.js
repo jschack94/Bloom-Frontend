@@ -17,7 +17,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
-const styles = (theme) => ({
+const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     width: "auto",
@@ -52,13 +52,13 @@ class Browse extends React.Component {
     this.props.fetchAllConnections(this.props.user.id);
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({ searchTerm: event.target.value });
   };
 
   render() {
     const { classes } = this.props;
-    const desiredMentors = this.props.allMentors.filter((mentor) =>
+    const desiredMentors = this.props.allMentors.filter(mentor =>
       mentor.job_title.includes(this.state.searchTerm)
     );
 
@@ -103,9 +103,9 @@ class Browse extends React.Component {
 
         {!this.props.allMentors || !this.props.allConnections
           ? null
-          : desiredMentors.map((mentor) =>
+          : desiredMentors.map(mentor =>
               this.props.allConnections.find(
-                (connection) => connection.mentor.id === mentor.id
+                connection => connection.mentor.id === mentor.id
               ) ? (
                 <Paper className={classes.paper} elevation={1} key={mentor.id}>
                   <img

@@ -95,15 +95,17 @@ class Mentor extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+   
     const { first_name, last_name, job_title, profile_pic } = this.props.mentor;
 
     return (
-      <Card className={classes.card}>
+      
+      <Card className={this.props.classes.card}>
+        
         <CardActionArea>
           <CardMedia
             component="img"
-            className={classes.media}
+            className={this.props.classes.media}
             height="1500"
             image={profile_pic}
             title="title"
@@ -116,9 +118,7 @@ class Mentor extends React.Component {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary" onClick={this.props.addMentor}>
-            ADD TO MEETING
-          </Button>
+      
           <Button
             size="small"
             color="primary"
@@ -126,11 +126,26 @@ class Mentor extends React.Component {
           >
             Show Details
           </Button>
+          <div>
+          <Button
+          
+          size="small"
+          color="primary"
+          onClick={() =>
+            this.props.addMentor ? this.props.addMentor(this.props.mentor) : this.props.removeMentor(this.props.mentor)}
+          >
+            Add/Remove Meeting
+            
+          </Button>
+          </div>
+          
+        
+          
           <MentorDetails
             open={this.state.detailsOpen}
             onClose={this.handleDetailsClose}
             mentor={this.props.mentor}
-            classes={classes}
+            classes={this.props.classes}
           />
           <ActionCable
             channel={{ channel: "MessagesChannel" }}

@@ -30,7 +30,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-const styles = (theme) => ({
+const styles = theme => ({
   root: {
     width: "auto",
     marginLeft: 130,
@@ -71,13 +71,13 @@ class Login extends React.Component {
     password: ""
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
     });
   };
 
-  handleLoginSubmit = (event) => {
+  handleLoginSubmit = event => {
     event.preventDefault();
     this.props.logIn(this.state.email_address, this.state.password);
     this.setState({
@@ -86,13 +86,13 @@ class Login extends React.Component {
     });
   };
 
-  errorFlash = (error) => {
+  errorFlash = error => {
     alert(error);
     this.props.closeAlertError();
   };
 
   render() {
-    const { classes, loggedIn, error, location } = this.props;
+    const { classes, loggedIn, error } = this.props;
     const { email_address, password } = this.state;
 
     if (loggedIn) {
@@ -118,23 +118,22 @@ class Login extends React.Component {
           <br></br>
           <br></br>
 
-
-        
-
           <MDBContainer className="align-middle">
             <MDBRow>
               <MDBCol md="12" className="align-middle">
-              <p></p>
-          <p></p>
-          <p></p>
-          
-         
+                <p></p>
+                <p></p>
+                <p></p>
+
                 <MDBCard>
                   <MDBCardBody className="mx-4">
                     <div className="text-center">
                       <h3 className="dark-grey-text mb-5">
                         <strong>Welcome Back</strong>
-                        <h5>Don't miss your next opportunity. Sign in to stay conncted with your mentor</h5>
+                        <h5>
+                          Don't miss your next opportunity. Sign in to stay
+                          conncted with your mentor
+                        </h5>
                       </h3>
                     </div>
                     <form

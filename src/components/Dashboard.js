@@ -6,8 +6,10 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import * as actions from "../actions";
 import withAuth from "../hocs/withAuth";
-import { MDBContainer, MDBAlert } from 'mdbreact';
+import { MDBContainer, MDBAlert } from "mdbreact";
 import Welcome from "react-welcome-page";
+
+import YourList from "./YourList";
 
 import { withStyles } from "@material-ui/core/styles";
 import SwipeableViews from "react-swipeable-views";
@@ -24,7 +26,7 @@ function TabContainer({ children, dir }) {
   );
 }
 
-const styles = (theme) => ({
+const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     width: "auto",
@@ -36,42 +38,67 @@ const styles = (theme) => ({
   }
 });
 
-const Dashboard = (props) => {
-  const { classes, theme } = props;
 
+class Dashboard extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      yourMentors: []
+
+    };
+  }
+
+  addMentor = (mentor) => {
+    if(!this.state.yourMentors.includes(mentor)) {
+      this.setState({
+        yourMentors: [...this.state.yourMentors, mentor]
+      })
+    }
+  }
+  
+    removeMentor = (mentor) => {
+      this.setState({
+        yourMentors: this.state.yourMentors.filter(m => m !== mentor) 
+      })
+    }
+  
+render() {
+ 
   return (
-    <div className={classes.root}>
+    <div className={this.props.classes.root}>
       <LoggedInHeader />
       <Welcome
-            loopDuration={1800}
-            data={[
-              {
-                image:
-                  "https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png",
-                text: "LOADING...",
-                imageAnimation: "bounce",
-                textAnimation: "flipInX",
-                backgroundColor: "#daf0f2",
-                textColor: "#002134"
-              },
-              {
-                image:
-                  "https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png",
-                text: <strong>WELCOME TO BLOOM</strong>,
-                backgroundColor: "#daf0f2"
-              }
-            ]}
-          />
+        loopDuration={1800}
+        data={[
+          {
+            image:
+              "https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png",
+            text: "LOADING...",
+            imageAnimation: "bounce",
+            textAnimation: "flipInX",
+            backgroundColor: "#daf0f2",
+            textColor: "#002134"
+          },
+          {
+            image:
+              "https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png",
+            text: <strong>WELCOME TO BLOOM</strong>,
+            backgroundColor: "#daf0f2"
+          }
+        ]}
+      />
       <MDBContainer>
-      <MDBAlert color="warning" dismiss>
-        <strong>You have successfully logged in! </strong><p>
-          </p> Check to see if you have received any notifications from your mentors.
-      </MDBAlert>
-    </MDBContainer>
-      <AppBar position="relative" color="default">
+        <MDBAlert color="warning" dismiss>
+          <strong>You have successfully logged in! </strong>
+          <p></p> Check to see if you have received any notifications from your
+          mentors.
+        </MDBAlert>
+      </MDBContainer>
+      <AppBar  position="relative" color="default">
         <Tabs
-          value={props.dashboardTab}
-          onChange={(event, value) => props.dashboardClickTab(event, value)}
+          value={this.props.dashboardTab}
+          onChange={(event, value) => this.props.dashboardClickTab(event, value)}
           indicatorColor="primary"
           textColor="primary"
           fullWidth
@@ -81,21 +108,25 @@ const Dashboard = (props) => {
         </Tabs>
       </AppBar>
       <SwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        index={props.dashboardTab}
-        onChangeIndex={(index) => props.dashboardChangeTab(index)}
+        axis={this.props.theme.direction === "rtl" ? "x-reverse" : "x"}
+        index={this.props.dashboardTab}
+        onChangeIndex={index => this.props.dashboardChangeTab(index)}
       >
-        <TabContainer dir={theme.direction}>
-          <MentorsContainer />
+        <TabContainer dir={this.props.theme.direction}>
+          <MentorsContainer addMentor={this.addMentor} />
+          
+        
+          <YourList yourMentors={this.state.yourMentors} removeMentor={this.removeMentor} />
+          
         </TabContainer>
-        <TabContainer dir={theme.direction}>
+        <TabContainer dir={this.props.theme.direction}>
           <MenteesContainer />
         </TabContainer>
       </SwipeableViews>
-      
     </div>
   );
 };
+}
 
 function mapStateToProps({ dashboardReducer: { dashboardTab } }) {
   return {

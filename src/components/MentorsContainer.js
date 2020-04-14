@@ -12,20 +12,24 @@ const styles = (theme) => ({
   }
 });
 
-const MentorsContainer = (props) => {
-  const { classes } = props;
+
+class MentorsContainer extends React.Component {
+  
+render() {
+ 
   return (
-    <div className={classes.root}>
+    <div className={this.props.classes.root}>
       <Grid container spacing={24}>
-        {props.mentors.map((mentor, index) => (
+        {this.props.mentors.map((mentor, index) => (
           <Grid item key={index}>
-            <Mentor key={mentor.id} mentor={mentor} />
+            <Mentor key={mentor.id} mentor={mentor} addMentor={this.props.addMentor} />
           </Grid>
         ))}
       </Grid>
     </div>
   );
 };
+}
 
 function mapStateToProps(state) {
   return {

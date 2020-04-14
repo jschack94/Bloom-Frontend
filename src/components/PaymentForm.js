@@ -95,7 +95,7 @@ export default class PaymentForm extends Component {
         placeholder: "Zip"
       },
       callbacks: {
-        methodsSupported: (methods) => {
+        methodsSupported: methods => {
           if (methods.googlePay) {
             this.setState({
               googlePay: methods.googlePay
@@ -148,7 +148,7 @@ export default class PaymentForm extends Component {
           });
         },
         unsupportedBrowserDetected: () => {},
-        inputEventReceived: (inputEvent) => {
+        inputEventReceived: inputEvent => {
           switch (inputEvent.eventType) {
             case "focusClassAdded":
               break;
@@ -190,10 +190,10 @@ export default class PaymentForm extends Component {
   render() {
     return (
       <div className="container">
-          <br></br>
-          <br></br>
-          <LoggedInHeader />
-          <br></br>
+        <br></br>
+        <br></br>
+        <LoggedInHeader />
+        <br></br>
         <div id="form-container">
           <div id="sq-walletbox">
             <button

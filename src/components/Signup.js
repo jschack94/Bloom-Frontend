@@ -1,9 +1,10 @@
 import React from "react";
-import { Link, Redirect} from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import * as actions from "../actions";
 import LoggedOutHeader from "./LoggedOutHeader";
+import Upload from "./Upload";
 
 import { MDBBtn } from "mdbreact";
 
@@ -15,7 +16,7 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-const styles = (theme) => ({
+const styles = theme => ({
   root: {
     width: "auto",
     marginLeft: 130,
@@ -55,37 +56,32 @@ class Signup extends React.Component {
     email_address: "",
     password: "",
     first_name: "",
-    last_name: "",
-    
+    last_name: ""
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
     });
   };
 
- 
-
-  handleSignupSubmit = (event) => {
+  handleSignupSubmit = event => {
     event.preventDefault();
     this.props.signUp(
       this.state.email_address,
       this.state.password,
       this.state.first_name,
-      this.state.last_name,
-      
+      this.state.last_name
     );
     this.setState({
       email_address: "",
       password: "",
       first_name: "",
-      last_name: "",
-      
+      last_name: ""
     });
   };
 
-  errorFlash = (error) => {
+  errorFlash = error => {
     alert(error);
     this.props.closeAlertError();
   };
@@ -152,10 +148,8 @@ class Signup extends React.Component {
                 className={classNames(classes.textField, classes.dense)}
                 margin="dense"
               />
-              
-              <p></p>
-              <p></p>
-              <p></p>
+
+              <Upload />
 
               <MDBBtn type="submit" gradient="blue" className={classes.button}>
                 Submit

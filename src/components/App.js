@@ -16,8 +16,7 @@ import Home from "./Home";
 
 import Email from "./Email";
 
-
-const App = (props) => {
+const App = props => {
   return (
     <Fragment>
       <ActionCable
@@ -34,7 +33,6 @@ const App = (props) => {
         <Route exact path="/home" component={Home} />
 
         <Route exact path="/Email" component={Email} />
-        
 
         <Route exact path="/about" component={About} />
         <Route exact path="/coffeemap" component={CoffeeMap} />
