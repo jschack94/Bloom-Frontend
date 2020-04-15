@@ -60,6 +60,10 @@ class Home extends React.Component {
                   className="white-text text-center text-md-left mt-xl-5 mb-5"
                 >
                   <MDBAnimation type="fadeInLeft" delay=".3s">
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                     <h1 className="h1-responsive font-weight-bold mt-sm-5">
                       Welcome to your Professional Community
                     </h1>
@@ -69,26 +73,36 @@ class Home extends React.Component {
                       build relationships with likeminded individuals who want
                       to help you along the way.
                     </h6>
-                    <Link
-                      to="/login"
-                      style={{ textDecoration: "none", color: "white" }}
-                    >
-                      <Button variant="contained" color="primary">
-                        Log In
-                      </Button>
-                    </Link>
-                    <Link
-                      to="/about"
-                      style={{ textDecoration: "none", color: "white" }}
-                    >
-                      <Button variant="contained" color="primary">
-                        Learn More
-                      </Button>
-                    </Link>
+                    
+                  
+                    
+                    <br></br>
+                    <ul class="actions">
+                      <br></br>
+                      <li>
+                      
+                        Click Arrow to Learn More
+                        <br></br>
+                        <a
+                          href="#header"
+                          
+                          class="fas fa-arrow-down icon fa-3x" 
+                        >
+                         
+                          
+                          
+                        </a>
+                      </li>
+                    </ul>
                   </MDBAnimation>
                 </MDBCol>
 
                 <MDBCol md="6" xl="5" className="mt-xl-5">
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
                   <MDBAnimation type="fadeInRight" delay=".3s">
                     <img
                       src="https://seeklogo.com/images/B/blue-flower-design-logo-F4C2DC0C40-seeklogo.com.png"
@@ -102,14 +116,22 @@ class Home extends React.Component {
           </MDBMask>
         </MDBView>
         <MDBJumbotron fluid>
-      <MDBContainer>
-      <MDBTypography tag="h4" className="blue-text" variant="display-1">Who is Bloom For?</MDBTypography>
-      
-        <h1 className="display-4" className="blue-text">Anyone looking to navigate their professional life, but needs that extra push from someone else.</h1>
-      
-        
-      </MDBContainer>
-    </MDBJumbotron>
+          <MDBContainer>
+            <MDBTypography
+              id="header"
+              tag="h4"
+              className="blue-text"
+              variant="display-1"
+            >
+              Who is Bloom For?
+            </MDBTypography>
+
+            <h1 className="display-4" className="blue-text">
+              Anyone looking to navigate their professional life, but needs that
+              extra push from someone else.
+            </h1>
+          </MDBContainer>
+        </MDBJumbotron>
       </div>
     );
   }

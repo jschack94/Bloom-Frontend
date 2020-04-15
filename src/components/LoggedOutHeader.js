@@ -62,14 +62,7 @@ const LoggedOutHeader = props => {
                 Sign Up
               </Button>
             </Link>
-            <Link
-              to="/about"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <Button variant="contained" color="primary">
-                About
-              </Button>
-            </Link>
+      
           </Toolbar>
         </div>
       </AppBar>
