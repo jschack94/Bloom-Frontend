@@ -92,45 +92,7 @@ class Login extends React.Component {
   };
 
   render() {
-    const { classes, loggedIn, error } = this.props;
-    const { email_address, password } = this.state;
-
-    if (loggedIn) {
-      return <Redirect to={"/dashboard"} />;
-    } else {
-      return (
-        <div className={classes.root}>
-          {error ? this.errorFlash(error) : null}
-          <LoggedOutHeader />
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <br></br>
-          <br></br>
-          <br></br>
-          <p></p>
-          <p></p>
-          <p></p>
-          <br></br>
-          <br></br>
-          <br></br>
-
-          <MDBContainer className="align-middle">
-            <MDBRow>
-              <MDBCol md="12" className="align-middle">
-                <p></p>
-                <p></p>
-                <p></p>
-
-                <MDBCard>
-                  <MDBCardBody className="mx-4">
-                    <div className="text-center">
-                      <h3 className="dark-grey-text mb-5">
-                        <strong>Welcome Back</strong>
-                        <h5>
+     <h5>
                           Don't miss your next opportunity. Sign in to stay
                           conncted with your mentor
                         </h5>
