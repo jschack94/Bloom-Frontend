@@ -18,7 +18,7 @@ const Email = () => {
 
             <p className="lead">
               <MDBBtn color="primary">
-                <Link to="/About" style={{ color: "black" }}>
+                <Link to="/Home" style={{ color: "black" }}>
                   Go Back
                 </Link>
               </MDBBtn>

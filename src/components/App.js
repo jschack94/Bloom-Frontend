@@ -7,7 +7,6 @@ import Signup from "./Signup";
 import { ActionCable } from "react-actioncable-provider";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
-import About from "./About";
 import Browse from "./Browse";
 import CoffeeMap from "./CoffeeMap";
 import Profile from "./Profile";
@@ -34,7 +33,7 @@ const App = props => {
 
         <Route exact path="/Email" component={Email} />
 
-        <Route exact path="/about" component={About} />
+  
         <Route exact path="/coffeemap" component={CoffeeMap} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/profile" component={Profile} />

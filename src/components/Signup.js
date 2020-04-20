@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import * as actions from "../actions";
 import LoggedOutHeader from "./LoggedOutHeader";
-import Upload from "./Upload";
+
 
 import { MDBBtn } from "mdbreact";
 
@@ -149,7 +149,7 @@ class Signup extends React.Component {
                 margin="dense"
               />
 
-              <Upload />
+             
 
               <MDBBtn type="submit" gradient="blue" className={classes.button}>
                 Submit

@@ -109,6 +109,9 @@ class Mentor extends React.Component {
             height="1500"
             image={profile_pic}
             title="title"
+            onClick={() =>
+              this.props.addMentor ? this.props.addMentor(this.props.mentor) : this.props.removeMentor(this.props.mentor)}
+            
           />
           <CardContent>
             <Typography gutterBottom variant="headline" component="h2">
@@ -134,7 +137,7 @@ class Mentor extends React.Component {
           onClick={() =>
             this.props.addMentor ? this.props.addMentor(this.props.mentor) : this.props.removeMentor(this.props.mentor)}
           >
-            Add/Remove Meeting
+            Add To Upcoming Meeting
             
           </Button>
           </div>

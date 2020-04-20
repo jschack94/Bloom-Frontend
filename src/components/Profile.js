@@ -5,6 +5,7 @@ import { compose } from "redux";
 import * as actions from "../actions";
 import withAuth from "../hocs/withAuth";
 
+
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
@@ -66,7 +67,10 @@ const styles = theme => ({
 });
 
 class Profile extends React.Component {
-  state = {
+  constructor(props) {
+    super(props);
+
+  this.state = {
     id: this.props.user.id,
     first_name: this.props.user.first_name,
     last_name: this.props.user.last_name,
@@ -82,8 +86,16 @@ class Profile extends React.Component {
     github: this.props.user.github,
     personal_website: this.props.user.personal_website,
     mentor_status: this.props.user.mentor_status,
-    will_buy_coffee: this.props.user.will_buy_coffee
+    will_buy_coffee: this.props.user.will_buy_coffee,
+    
+
+
+
   };
+
+  this.handleUploadImage = this.handleUploadImage.bind(this);
+}
+
 
   handleChange = event => {
     this.setState({ [event.target.id]: event.target.value });
@@ -138,6 +150,7 @@ class Profile extends React.Component {
           personal_website: stateUserData.personal_website,
           mentor_status: stateUserData.mentor_status,
           will_buy_coffee: stateUserData.will_buy_coffee
+
         }
       })
     }).then(res =>
@@ -146,6 +159,24 @@ class Profile extends React.Component {
         : alert("Something went wrong. Please try again later.")
     );
   };
+
+
+  handleUploadImage(ev) {
+    ev.preventDefault();
+
+    const data = new FormData();
+    data.append("file", this.uploadInput.files[0]);
+    data.append("filename", this.fileName.value);
+
+    fetch("http://localhost:8000/upload", {
+      method: "POST",
+      body: data
+    }).then(response => {
+      response.json().then(body => {
+        this.setState({ profile_pic: `http://localhost:8000/${body.file}` });
+      });
+    });
+  }
 
   render() {
     const { classes } = this.props;
@@ -176,7 +207,31 @@ class Profile extends React.Component {
               value="will_buy_coffee"
             />{" "}
             Willing to buy coffee
-            <form className={classes.container} noValidate autoComplete="off">
+            <form className={classes.container} noValidate autoComplete="off"
+            onSubmit={this.handleUploadImage}>
+        <div>
+          CLICK OR DRAG AND DROP
+          <input 
+            ref={ref => {
+              this.uploadInput = ref;
+            }}
+            type="file"
+          />
+        </div>
+        <div>
+          <input
+            ref={ref => {
+              this.fileName = ref;
+            }}
+            type="text"
+            placeholder="Enter the desired name of file"
+          />
+        </div>
+        <br />
+        <div>
+          <button>Upload</button>
+        </div>
+        
               <TextField
                 required
                 id="first_name"
@@ -207,17 +262,6 @@ class Profile extends React.Component {
                 onChange={this.handleChange}
                 value={this.state.email_address}
               />
-
-              <TextField
-                required
-                id="profile_pic"
-                label="Profile Picture"
-                className={classes.textField}
-                margin="normal"
-                helperText="Required"
-                onChange={this.handleChange}
-                value={this.state.profile_pic}
-              />
               <TextField
                 required
                 type="password"
@@ -228,6 +272,17 @@ class Profile extends React.Component {
                 helperText="Required"
                 onChange={this.handleChange}
                 value={this.state.password}
+              />
+              <TextField
+                required
+                type="profilepic"
+                id="profilepic"
+                label="profilepic"
+                className={classes.textField}
+                margin="normal"
+                helperText="Required"
+                onChange={this.handleChange}
+                value={this.state.profile_pic}
               />
               <TextField
                 id="location"
@@ -309,6 +364,8 @@ class Profile extends React.Component {
                 Save
               </Button>
             </form>
+           
+            
           </div>
         </Paper>
       </div>
@@ -320,7 +377,7 @@ Profile.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-function mapStateToProps({ usersReducer: { user, avatar } }) {
+function mapStateToProps({ usersReducer: { user } }) {
   return {
     user
   };

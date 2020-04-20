@@ -5,9 +5,17 @@ import Button from "@material-ui/core/Button";
 
 import {
   MDBNavbar,
-  MDBJumbotron,
   MDBNavbarBrand,
   MDBCarousel,
+
+  MDBIcon,
+  MDBInput,
+  MDBJumbotron,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBCardTitle,
+  MDBCardText,
   MDBCarouselCaption,
   MDBNavbarNav,
   MDBNavItem,
@@ -70,7 +78,7 @@ class Home extends React.Component {
                     <hr className="hr-light" />
                     <h6 className="mb-4">
                       Bloom is the best place to learn about the industry and
-                      build relationships with likeminded individuals who want
+                      build relationships with likeminded individuals who are determined
                       to help you along the way.
                     </h6>
                     
@@ -115,13 +123,15 @@ class Home extends React.Component {
             </MDBContainer>
           </MDBMask>
         </MDBView>
-        <MDBJumbotron fluid>
+        <MDBJumbotron fluid
+        id="header">
           <MDBContainer>
             <MDBTypography
-              id="header"
+              
               tag="h4"
               className="blue-text"
               variant="display-1"
+              
             >
               Who is Bloom For?
             </MDBTypography>
@@ -130,8 +140,159 @@ class Home extends React.Component {
               Anyone looking to navigate their professional life, but needs that
               extra push from someone else.
             </h1>
+           
           </MDBContainer>
         </MDBJumbotron>
+        <MDBContainer>
+        <MDBRow>
+          <MDBCol md="8">
+            <MDBCard>
+              <MDBCardBody>
+                <a
+                  href="#!"
+                  className="activator waves-effect waves-light mr-4"
+                ></a>
+                <MDBCardTitle>
+                  <h2 className="display-4">
+                    Our Mission
+                  </h2>
+                </MDBCardTitle>
+                <hr />
+                <MDBCardText>
+                  <h4> We are the world's largest professional network.The mission of
+                  Bloom is simple: connect the world’s professionals to make
+                  them more productive and successful.</h4>
+        
+                </MDBCardText>
+              </MDBCardBody>
+            </MDBCard>
+            <MDBRow>
+              <MDBCol md="4">
+                <MDBCard>
+                  
+                  <MDBCardBody className="elegant-color white-text rounded-bottom">
+                    <MDBCardTitle>Izzy got out of unemployment</MDBCardTitle>
+                    <hr className="hr-light" />
+                    <MDBCardText className="white-text">
+                      “After I lost my job, one of the first things I did was
+                      update my Bloom profile. I had a recruiter reach out to
+                      me....”
+                    </MDBCardText>
+                    <a
+                      href="#!"
+                      className="black-text d-flex justify-content-end"
+                    >
+                      <h5 className="white-text">
+                        Read more
+                        <MDBIcon icon="angle-double-right" className="ml-2" />
+                      </h5>
+                    </a>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+              <MDBCol md="4">
+                <MDBCard>
+                
+                  <MDBCardBody className="elegant-color white-text rounded-bottom">
+                    <MDBCardTitle>
+                      Aaron was matched with a recruiter
+                    </MDBCardTitle>
+                    <hr className="hr-light" />
+                    <MDBCardText className="white-text">
+                      “I was having a very hard time finding a job. A supervisor
+                      reached out to me on Bloom. We set up an interview and...”
+                    </MDBCardText>
+                    <a
+                      href="#!"
+                      className="black-text d-flex justify-content-end"
+                    >
+                      <h5 className="white-text">
+                        Read more
+                        <MDBIcon icon="angle-double-right" className="ml-2" />
+                      </h5>
+                    </a>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+              <MDBCol md="4">
+                <MDBCard>
+                 
+                  <MDBCardBody className="elegant-color white-text rounded-bottom">
+                    <MDBCardTitle>Brad regained his confidence</MDBCardTitle>
+                    <hr className="hr-light" />
+                    <MDBCardText className="white-text">
+                      “I didn’t think I could make it in the city. I went on
+                      LinkedIn and found a lot of jobs - I realized, I am
+                      qualified. So, I applied. And I got it!”
+                    </MDBCardText>
+                    <a
+                      href="#!"
+                      className="black-text d-flex justify-content-end"
+                    >
+                      <h5 className="white-text">
+                        Read more
+                        <MDBIcon icon="angle-double-right" className="ml-2" />
+                      </h5>
+                    </a>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+            </MDBRow>
+          </MDBCol>
+          <MDBCol md="4">
+            <MDBCard wide cascade>
+              <form>
+                <p className="h5 text-center mb-4">
+                  <p></p>Have a question or just want to chat? Email us below:
+                </p>
+                <div className="grey-text">
+                  <MDBInput
+                    label="Your name"
+                    icon="user"
+                    group
+                    type="text"
+                    validate
+                    error="wrong"
+                    success="right"
+                  />
+                  <MDBInput
+                    label="Your email"
+                    icon="envelope"
+                    group
+                    type="email"
+                    validate
+                    error="wrong"
+                    success="right"
+                  />
+                  <MDBInput
+                    label="Subject"
+                    icon="tag"
+                    group
+                    type="text"
+                    validate
+                    error="wrong"
+                    success="right"
+                  />
+                  <MDBInput
+                    type="textarea"
+                    rows="2"
+                    label="Your message"
+                    icon="pencil-alt"
+                  />
+                </div>
+                <div className="text-center">
+                  <MDBBtn outline color="primary">
+                    <Link to="/Email" style={{ color: "black" }}>
+                      Send Email
+                      <MDBIcon far icon="paper-plane" className="ml-1" />
+                    </Link>
+                  </MDBBtn>
+                </div>
+              </form>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
       </div>
     );
   }

@@ -13,7 +13,7 @@ const styles = (theme) => ({
 });
 
 const MenteesContainer = (props) => {
-  debugger;
+  
   const { classes } = props;
   return (
     <div className={classes.root}>
