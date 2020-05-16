@@ -1,12 +1,13 @@
 Bloom
+
 Bloom is a...
 
-View the Back End Repository Here
+View the Back End Repository Here: https://github.com/jschack94/Mod5projectbackend
 
 Current Features
 
 Demo
-View Demo on YouTube
+View Demo on YouTube Here:
 
 Contributing:
 Fork this repository.
@@ -17,7 +18,7 @@ Create the pull request.
 Alternatively see the GitHub documentation on creating a pull request.
 
 Contact
-My e-mail is jschack94@gmail.com. visit my LinkedIn.
+My e-mail is jschack94@gmail.com. visit my LinkedIn at https://www.linkedin.com/in/jonathan-schack/
 
 License
 This project uses the following license: MIT License.
