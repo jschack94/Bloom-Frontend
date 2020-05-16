@@ -4,9 +4,9 @@ Bloom is a...
 
 View the Back End Repository Here: https://github.com/jschack94/Mod5projectbackend
 
-Current Features
-A user can...
-A user can...
+Current Features<p>
+A user can...<p>
+A user can...<p>
 
 Demo
 View Demo on YouTube Here:
