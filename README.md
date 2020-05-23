@@ -2,6 +2,7 @@
 
 Bloom is a... <p>
 
+<strong> Backend repo here: </strong> https://github.com/jschack94/Module-5-rails-backend-Bloom </p>
 
 
 <strong> Current Features: </strong> <p>
