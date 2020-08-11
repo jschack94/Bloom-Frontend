@@ -25,7 +25,7 @@ After you run `npm start`, a tab in your browser should open automatically. Go a
 
 * A user can go to their 'Profile' page to edit their info or sign up as a mentor (otherwise, the user will only be a mentee by default).
 
-![edit profile](public/browse.mov)
+![edit profile](public/browse.gif)
 
 ![be a mentor](public/hatch-demo-be-mentor.gif)
 
