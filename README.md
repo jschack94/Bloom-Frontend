@@ -2,8 +2,7 @@
 
 Bloom is a web application that helps you develop your professional network in a meaningful way. If you would like to be a mentor, you can sign up to be one and you will show up on the 'Browse All Mentors' page where potential mentees can then request your mentorship. Once the mentor accepts the request, the mentor and mentee can chat and make plans to meet up in person, schedule a phone call, exchange their email addresses, or make other arrangements they see fit.
 
-## Youtube Tutorial
-Play around with the [live demo here](https://app-hatch.herokuapp.com/). Go ahead and sign up as a new user. In the Profile page, you have the option to make yourself a mentor so that you will show up on the browse page!
+
 
 ## Installing Locally
 
@@ -26,7 +25,7 @@ After you run `npm start`, a tab in your browser should open automatically. Go a
 
 * A user can go to their 'Profile' page to edit their info or sign up as a mentor (otherwise, the user will only be a mentee by default).
 
-![edit profile](public/hatch-demo-edit-profile.gif)
+![edit profile](public/browse.mov)
 
 ![be a mentor](public/hatch-demo-be-mentor.gif)
 
