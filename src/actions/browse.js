@@ -1,6 +1,6 @@
 export const fetchAllMentors = () => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1//users")
+    fetch("https://bloom-rails.herokuapp.com/api/v1/users")
     .then(res => res.json())
     .then(json => json.filter(user => user.mentor_status === true && user.location.city === 'Chicago' && user.location.state === 'IL'))
     .then(mentors => dispatch(setAllMentors(mentors)))
@@ -16,7 +16,7 @@ export function setAllMentors(mentors) {
 
 export const requestMentorship = (mentee_id, mentor_id) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/connections", {
+    fetch("https://bloom-rails.herokuapp.com/api/v1/connections", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export const requestMentorship = (mentee_id, mentor_id) => {
 
 export const fetchAllConnections = (user_id) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/connections")
+    fetch("https://bloom-rails.herokuapp.com/api/v1/connections")
     .then(res => res.json())
     .then(json => json.filter(connection => connection.mentee.id === user_id))
     .then(connections => {

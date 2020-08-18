@@ -2,9 +2,9 @@
 export const signUp = (email_address, password, first_name, last_name) => {
   return (dispatch) => {
 
-   
 
-fetch("http://localhost:3000/api/v1/users", {
+
+fetch("https://bloom-rails.herokuapp.com/api/v1/users", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -16,10 +16,10 @@ fetch("http://localhost:3000/api/v1/users", {
           password: password,
           first_name: first_name,
           last_name: last_name,
-          
-      
+
+
           }
-        
+
       })
     })
     .then(response => {
@@ -35,13 +35,13 @@ fetch("http://localhost:3000/api/v1/users", {
     })
     .catch(r => r.json().then(json => dispatch({ type: 'FAILED_LOGIN', payload: json.errors })))
   }
-  
+
 }
 
 
 export const logIn = (email_address, password) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/login", {
+    fetch("https://bloom-rails.herokuapp.com/api/v1/login", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export const logIn = (email_address, password) => {
 
 export const fetchCurrentUser = () => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/profile", {
+    fetch("https://bloom-rails.herokuapp.com/api/v1/profile", {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('jwt')}`
@@ -91,7 +91,7 @@ export const setCurrentUser = userData => ({
 export const failedLogin = errorMsg => ({
   type: 'FAILED_LOGIN',
   payload: errorMsg
-  
+
 })
 
 
@@ -113,7 +113,7 @@ export const receivedNotifications = response => ({
 
 export const clearNotifications = (user_id) => {
   return (dispatch) => {
-    fetch('http://localhost:3000/api/v1/notifications', {
+    fetch('https://bloom-rails.herokuapp.com/api/v1/notifications', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -135,7 +135,7 @@ export const clearNotifications = (user_id) => {
 
 export const acceptRequest = (mentor_id, mentee_id) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/connections", {
+    fetch("https://bloom-rails.herokuapp.com/api/v1/connections", {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ export const acceptRequest = (mentor_id, mentee_id) => {
 
 export const declineRequest = (mentor_id, mentee_id) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/connections", {
+    fetch("https://bloom-rails.herokuapp.com/api/v1/connections", {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

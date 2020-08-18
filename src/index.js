@@ -18,13 +18,13 @@ import '@fortawesome/fontawesome-free/css/all.min.css'; import
 
 
 ReactDOM.render(
-  <ActionCableProvider url={'ws://localhost:3000/cable'}>
+  <ActionCableProvider url={'wss://bloom-rails.herokuapp.com/cable'}>
     <Provider store={store}>
       <Router>
         <App />
       </Router>
     </Provider>
     </ActionCableProvider>,
-  
+
   document.getElementById('root'))
 registerServiceWorker()

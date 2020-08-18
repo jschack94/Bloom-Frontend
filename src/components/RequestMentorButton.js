@@ -19,7 +19,7 @@ class RequestMentorButton extends React.Component {
   };
 
   requestMentorship = (event) => {
-    fetch(`http://localhost:3000/api/v1/connections`, {
+    fetch(`https://bloom-rails.herokuapp.com/api/v1/connections`, {
       method: "POST",
       headers: HEADERS,
       body: JSON.stringify({

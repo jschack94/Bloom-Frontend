@@ -45,7 +45,7 @@ class Mentee extends React.Component {
   };
 
   handleChatClickOpen = () => {
-    fetch(`http://localhost:3000/api/v1/connections`)
+    fetch(`https://bloom-rails.herokuapp.com/api/v1/connections`)
       .then((res) => res.json())
       .then((json) =>
         this.setState({

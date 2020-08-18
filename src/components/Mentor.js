@@ -44,7 +44,7 @@ class Mentor extends React.Component {
   };
 
   handleChatClickOpen = () => {
-    fetch(`http://localhost:3000/api/v1/connections`)
+    fetch(`https://bloom-rails.herokuapp.com/api/v1/connections`)
       .then((res) => res.json())
       .then((json) =>
         this.setState({
@@ -95,13 +95,13 @@ class Mentor extends React.Component {
   };
 
   render() {
-   
+
     const { first_name, last_name, job_title, profile_pic } = this.props.mentor;
 
     return (
-      
+
       <Card className={this.props.classes.card}>
-        
+
         <CardActionArea>
           <CardMedia
             component="img"
@@ -111,7 +111,7 @@ class Mentor extends React.Component {
             title="title"
             onClick={() =>
               this.props.addMentor ? this.props.addMentor(this.props.mentor) : this.props.removeMentor(this.props.mentor)}
-            
+
           />
           <CardContent>
             <Typography gutterBottom variant="headline" component="h2">
@@ -121,7 +121,7 @@ class Mentor extends React.Component {
           </CardContent>
         </CardActionArea>
         <CardActions>
-      
+
           <Button
             size="small"
             color="primary"
@@ -131,19 +131,19 @@ class Mentor extends React.Component {
           </Button>
           <div>
           <Button
-          
+
           size="small"
           color="primary"
           onClick={() =>
             this.props.addMentor ? this.props.addMentor(this.props.mentor) : this.props.removeMentor(this.props.mentor)}
           >
             Add To Upcoming Meeting
-            
+
           </Button>
           </div>
-          
-        
-          
+
+
+
           <MentorDetails
             open={this.state.detailsOpen}
             onClose={this.handleDetailsClose}

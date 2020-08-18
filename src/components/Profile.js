@@ -87,7 +87,7 @@ class Profile extends React.Component {
     personal_website: this.props.user.personal_website,
     mentor_status: this.props.user.mentor_status,
     will_buy_coffee: this.props.user.will_buy_coffee,
-    
+
 
 
 
@@ -127,7 +127,7 @@ class Profile extends React.Component {
   };
 
   patchUserProfile = stateUserData => {
-    fetch("http://localhost:3000/api/v1/users", {
+    fetch("https://bloom-rails.herokuapp.com/api/v1/users", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -211,7 +211,7 @@ class Profile extends React.Component {
             onSubmit={this.handleUploadImage}>
         <div>
           CLICK OR DRAG AND DROP
-          <input 
+          <input
             ref={ref => {
               this.uploadInput = ref;
             }}
@@ -231,7 +231,7 @@ class Profile extends React.Component {
         <div>
           <button>Upload</button>
         </div>
-        
+
               <TextField
                 required
                 id="first_name"
@@ -364,8 +364,8 @@ class Profile extends React.Component {
                 Save
               </Button>
             </form>
-           
-            
+
+
           </div>
         </Paper>
       </div>
